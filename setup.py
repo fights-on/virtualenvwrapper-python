@@ -6,10 +6,6 @@ PROJECT = 'virtualenvwrapper-powershell'
 # YY.M.D[a-z]
 VERSION = '12.7.8'
 
-# Bootstrap installation of Distribute
-import distribute_setup
-distribute_setup.use_setuptools()
-
 from setuptools import setup
 
 from distutils.util import convert_path
@@ -58,7 +54,7 @@ FOLDERID_Documents = GUID(
             0x48, 0x03, 0x69, 0xC7
             ))
 
-path = c_wchar_p(chr(0x00) * 256)
+path = c_wchar_p("" * 256)
 
 # Use new function if it's available.
 if hasattr(windll.shell32, 'SHGetKnownFolderPath'):
@@ -73,7 +69,7 @@ if hasattr(windll.shell32, 'SHGetKnownFolderPath'):
 # XXX: Not much error checking around here, is it?
 else:
     # XXX: Document header files where all this comes from.
-    TOKEN_READ = 0x00020000L | 0x0008
+    TOKEN_READ = 0x00020000 | 0x0008
     # Works for Windows XP.
     CSIDL_PERSONAL = 0x0005
 
