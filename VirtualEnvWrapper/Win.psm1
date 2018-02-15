@@ -66,7 +66,7 @@ function add_posh_to_virtualenv {
         Set-Content "$TargetPath/Scripts/activate.ps1" `
                     $ACTIVATE_SCRIPT_TEMPLATE `
                     -encoding "UTF8"
-        write-host "Added activation script por Powershell to $TargetPath\Scripts."
+        write-host "Added activation script for Powershell to $TargetPath\Scripts."
     }
     else {
         Write-Warning "Couldn't copy PoSh activate script to new virtual environment."
@@ -109,7 +109,7 @@ function switchPythonCore
 
     $currPython = getCurrentPythonExe
     $currPythonW = getCurrentPythonWExe
-    $pyVer = & { $OFS = ""; "$((& "python.exe" "-V" 2>&1).exception.message.split(" ")[1][0..2])" }
+    $pyVer = & { $OFS = ""; "$((& "python.exe" "-V").split(" ")[1][0..2])" }
 
     if ($currPython -like "*Scripts*")
     {
