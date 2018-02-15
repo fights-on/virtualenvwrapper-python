@@ -9,7 +9,7 @@
 #==============================================================================
 # Ensure the old environment is restored when we exit. (Based on PowerTab.)
 #------------------------------------------------------------------------------
-if($host.Version.Major -eq 3){
+if($host.Version.Major -ge 3){
 	$_oldTabExpansion = Get-Content Function:TabExpansion2
 }else{
 	$_oldTabExpansion = Get-Content Function:TabExpansion
