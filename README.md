@@ -10,7 +10,9 @@
 
 ```powershell
 PS C:\virtualenvwrapper-powershell> python setup.py install
-PS C:\> Import-Module virtualenvwrapper
+PS C:\virtualenvwrapper-powershell> Set-ExecutionPolicy RemoteSigned
+PS C:\virtualenvwrapper-powershell> mkdir ~/.virtualenvs
+PS C:\virtualenvwrapper-powershell> Import-Module VirtualEnvWrapper
 ```
 
 ### References:
